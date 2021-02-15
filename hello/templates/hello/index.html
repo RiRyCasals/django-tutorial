@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,9 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'hello/css/style.css' %}" /> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous" />
 </head>
-<body>
+<!-- <body>
     <h1>{{title}}</h1>
     <p>{{msg}}</p>
+    <p><a href="{% url goto %}">{{goto}}</a></p>
+</body> -->
+<body class="container">
+    <h1 class="display-4 text-primary mb-4">{{title}}</h1>
+    <p class="h5">{{msg}}</p>
+    <p class="h6"><a href="{% url goto %}">{{goto}}</a></p>
 </body>
 </html>

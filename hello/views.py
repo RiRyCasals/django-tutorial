@@ -7,8 +7,18 @@ def index(request):
     params = {
         'title': 'hello/index',
         'msg': 'これはサンプルページです',
+        'goto': 'next',
     }
     return render(request, 'hello/index.html', params)
+
+def next(request):
+    params = {
+        'title': 'hello/next',
+        'msg': 'これはもう1つのページです',
+        'goto': 'index',
+    }
+    return render(request, 'hello/index.html', params)
+
 
 def index1(request):
     if 'msg' in request.GET:
