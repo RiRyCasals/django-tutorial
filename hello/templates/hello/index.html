@@ -7,16 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'hello/css/style.css' %}" /> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous" >
 </head>
-<!-- <body>
-    <h1>{{title}}</h1>
-    <p>{{msg}}</p>
-    <p><a href="{% url goto %}">{{goto}}</a></p>
-</body> -->
 <body class="container">
-    <h1 class="display-4 text-primary mb-4">{{title}}</h1>
-    <p class="h5">{{msg}}</p>
-    <p class="h6"><a href="{% url goto %}">{{goto}}</a></p>
+    <h1 class="display-4 text-promary">{{title}}</h1>
+    <p class="h5 mt-4">{{message|safe}}</p>
+    <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="btn btn-primary my-2" type="submit" value="click">
+    </form>
 </body>
 </html>
