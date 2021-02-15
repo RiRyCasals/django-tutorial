@@ -4,7 +4,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Hello django !!")
+    params = {
+        'title': 'hello/index',
+        'msg': 'これはサンプルページです',
+    }
+    return render(request, 'hello/index.html', params)
 
 def index1(request):
     if 'msg' in request.GET:
